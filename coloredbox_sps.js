@@ -31,3 +31,4 @@
 	}
 
 customElements.define("com-sap-sample-coloredbox-sps", ColoredBoxSps);
+})();
