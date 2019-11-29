@@ -1,7 +1,8 @@
 (function() { 
 	let template = document.createElement("template");
-	template.innerHTML = "<style>:host {border-radius: 25px;border-width: 4px;border-color: black;border-style: solid;display: block;} </style> ";
-
+	//template.innerHTML = "<style>:host {border-radius: 25px;border-width: 4px;border-color: black;border-style: solid;display: block;} </style> ";
+	template.innerHTML = '<canvas id="myChart" width="400" height="400"></canvas><script>var ctx=document.getElementById("myChart"),myRadarChart=new Chart(ctx,{type:"radar",data:{labels:["Running","Swimming","Eating","Cycling"],datasets:[{data:[20,10,4,2],fill:1},{data:[28,15,2,25]}]},options:{scale:{angleLines:{display:!1},ticks:{suggestedMin:10,suggestedMax:100}}}});</script>';
+	
 	class ColoredBox extends HTMLElement {
 		constructor() {
 			super(); 
@@ -30,4 +31,4 @@
 
 	customElements.define("com-sap-sample-coloredbox", ColoredBox);
 })();
-window.sac_test = 10
+jQuery('body').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>');
