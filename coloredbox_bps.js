@@ -24,6 +24,7 @@
 
 		set opacity(newOpacity) {
 			this._shadowRoot.getElementById("bps_opacity").value = newOpacity;
+			console.log(newOpacity);
 		}
 
 		get opacity() {
