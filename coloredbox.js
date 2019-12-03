@@ -42,6 +42,7 @@
 			}
 			if ("innertext" in changedProperties) {
 				this.setAttribute("innertext", changedProperties["innertext"]);
+				console.log('HI');
 			}
 		}
 	}
