@@ -49,6 +49,11 @@
 		"height": {
 			"type": "integer",
 			"default": 100
+		},
+		"innertext": {
+			"type": "string",
+			"description": "Inner text of p",
+			"default": "Im fine"
 		}
 	},
 	"methods": {
@@ -67,6 +72,17 @@
 			"returnType": "string",
 			"description": "Returns the background color.",
 			"body": "return this.color;"
+		},
+		"setText": {
+			"description": "Sets the inner text.",
+			"parameters": [
+				{
+					"name": "newText",
+					"type": "string",
+					"description": "The new inner text"
+				}
+			],
+			"body": "paragr.textContent = newText;"
 		}
 	},
 	"events": {
