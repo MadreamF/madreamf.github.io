@@ -1,6 +1,6 @@
 (function()  {
 	let template = document.createElement("template");
-	template.innerHTML = '<form id="form"><fieldset><legend>Colored Box Properties</legend><table><tr><td>Opacity</td><td><input id="bps_opacity" type="text" size="5" maxlength="5"></td></tr></table><input type="submit" style="display:none;"></fieldset></form><style>:host {display: block;padding: 1em 1em 1em 1em;}</style>';
+	template.innerHTML = '<form id="form"><fieldset><legend>Colored Box Properties</legend><table><tr><td>Opacity</td><td><input id="bps_opacity" type="text" size="5" maxlength="5"></td></tr><tr><td>Opacity</td><td><input id="bps_innertext" type="text" size="5" maxlength="50"></td></tr></table><input type="submit" style="display:none;"></fieldset></form><style>:host {display: block;padding: 1em 1em 1em 1em;}</style>';
 
 	class ColoredBoxBps extends HTMLElement {
 		constructor() {
@@ -15,7 +15,8 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							opacity: this.opacity
+							opacity: this.opacity,
+							innertext: this.innertext
 						}
 					}
 			}));
@@ -27,6 +28,14 @@
 
 		get opacity() {
 			return this._shadowRoot.getElementById("bps_opacity").value;
+		}
+		
+		set innertext(newInnertext) {
+			this._shadowRoot.getElementById("bps_innertext").value = newInnertext;
+		}
+		
+		get innertext() {
+			return this._shadowRoot.getElementById("bps_innertext").value;
 		}
 	}
 
