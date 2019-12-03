@@ -82,7 +82,7 @@
 					"description": "The new inner text"
 				}
 			],
-			"body": "paragr.textContent = newText;"
+			"body": "this.innertext = newText;"
 		}
 	},
 	"events": {

@@ -16,8 +16,14 @@
 			this._props = {};
 			
 			const paragr = document.createElement('p');
-			paragr.setAttribute('data-loh', 'you');
-			paragr.textContent = 'How are you?';
+			//paragr.setAttribute('data-loh', 'you');
+			if( this.hasAttribute('innertext') ) {
+				const text = this.getAttribute('innertext');
+				paragr.textContent = text;
+			} else {
+				paragr.textContent = 'How are you?';
+			}
+			
 			shadowRoot.appendChild(paragr);
 		}
 		
@@ -33,6 +39,9 @@
 			}
 			if ("opacity" in changedProperties) {
 				this.style["opacity"] = changedProperties["opacity"];
+			}
+			if ("innertext" in changedProperties) {
+				this.setAttribute("innertext", changedProperties["innertext"]);
 			}
 		}
 	}
