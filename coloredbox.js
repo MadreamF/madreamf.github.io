@@ -16,7 +16,7 @@
 			this._props = {};
 			
 			const paragr = document.createElement('p');
-			//paragr.setAttribute('data-loh', 'you');
+			paragr.setAttribute('class', 'paragraph');
 			if( this.hasAttribute('innertext') ) {
 				const text = this.getAttribute('innertext');
 				paragr.textContent = text;
@@ -27,7 +27,11 @@
 			shadowRoot.appendChild(paragr);
 		}
 		
-		
+		attributeChangedCallback(name, oldValue, newValue) {
+			console.log('Custom square element attributes changed.');
+			this.shadowRoot.querySelector(".paragraph").textContent = newValue;
+			
+		}
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
