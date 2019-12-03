@@ -14,12 +14,14 @@
 				this.dispatchEvent(event);
 			});
 			this._props = {};
+			
+			const paragr = document.createElement('p');
+			paragr.setAttribute('data-loh', 'you');
+			paragr.textContent = 'How are you?';
+			shadowRoot.appendChild(paragr);
 		}
 		
-		const paragr = document.createElement('p');
-		paragr.setAttribute('data-loh', 'you');
-		paragr.textContent = 'How are you?';
-		shadowRoot.appendChild(paragr);
+		
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
