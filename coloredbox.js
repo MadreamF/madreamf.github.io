@@ -29,7 +29,7 @@
 		
 		attributeChangedCallback(name, oldValue, newValue) {
 			console.log('Custom square element attributes changed.');
-			this.shadowRoot.querySelector(".paragraph").textContent = newValue;
+			this.shadowRoot.querySelector(".paragraph").textContent = this.getAttribute('innertext');
 			
 		}
 
