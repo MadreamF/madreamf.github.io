@@ -17,16 +17,16 @@
 			this._innertext = 'Initial text';
 			
 			this._paragr = document.createElement('p');
-			paragr.setAttribute('class', 'paragraph');
+			this._paragr.setAttribute('class', 'paragraph');
 			if( this.hasAttribute('innertext') ) {
 				const text = this.getAttribute('innertext');
-				paragr.textContent = text;
+				this._paragr.textContent = text;
 			} else {
-				paragr.textContent = 'How are you?';
+				this._paragr.textContent = 'How are you?';
 				this.setAttribute('innertext', 'How are you?');
 			}
 			
-			shadowRoot.appendChild(paragr);
+			shadowRoot.appendChild(this._paragr);
 		}
 		
 		// attributeChangedCallback(name, oldValue, newValue) {
