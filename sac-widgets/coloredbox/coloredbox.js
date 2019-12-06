@@ -128,8 +128,8 @@
 			});
 			
 			this.$svg.on("mousemove", function() {
-				console.log("svg mousemove");
-				var p1 = d3.mouse(this);
+				console.log(d3);
+				var p1 = window.d3.mouse(this);
 				root.px = p1[0];
 				root.py = p1[1];
 				force.resume();
