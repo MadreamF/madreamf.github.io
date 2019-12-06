@@ -27,11 +27,11 @@
 			shadowRoot.appendChild(paragr);
 		}
 		
-		attributeChangedCallback(name, oldValue, newValue) {
-			console.log('Custom square element attributes changed.');
-			this.shadowRoot.querySelector(".paragraph").textContent = this.getAttribute('innertext');
+		// attributeChangedCallback(name, oldValue, newValue) {
+			// console.log('Custom square element attributes changed.');
+			// this.shadowRoot.querySelector(".paragraph").textContent = this.getAttribute('innertext');
 			
-		}
+		// }
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
@@ -46,8 +46,9 @@
 			}
 			if ("innertext" in changedProperties) {
 				//this.setAttribute("innertext", changedProperties["innertext"]);
-				this.setAttribute("innertext", 'Changed!');
+				//this.setAttribute("innertext", 'Changed!');
 				console.log('innertext was in changedProperties');
+				this.style["color"] = changedProperties["innertext"];
 			}
 		}
 	}
