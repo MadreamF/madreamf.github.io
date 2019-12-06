@@ -65,6 +65,7 @@
 				console.log('innertext was in changedProperties');
 				this.style["color"] = changedProperties["innertext"];
 				this._paragr.textContent = changedProperties["innertext"];
+				this.render();
 			}
 		}
 		
