@@ -12,21 +12,21 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-coloredbox",
-			"url": "https://madreamf.github.io/coloredbox.js",
+			"url": "https://madreamf.github.io/sac-widgets/coloredbox/coloredbox_bps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
 			"tag": "com-sap-sample-coloredbox-sps",
-			"url": "https://madreamf.github.io/coloredbox_sps.js",
+			"url": "https://madreamf.github.io/sac-widgets/coloredbox/coloredbox_sps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
 			"tag": "com-sap-sample-coloredbox-bps",
-			"url": "https://madreamf.github.io/coloredbox_bps.js",
+			"url": "https://madreamf.github.io/sac-widgets/coloredbox/coloredbox_bps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
