@@ -107,7 +107,7 @@
 				i = 0,
 				n = nodes.length;
 			
-			while (++i < n) q.visit(collide(nodes[i]));
+			while (++i < n) q.visit(this.collide(nodes[i]));
 			
 			this.$svg.selectAll("circle")
 				.attr("cx", function(d) { return d.x; })
