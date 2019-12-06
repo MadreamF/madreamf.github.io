@@ -38,6 +38,10 @@
 			// shadowRoot.appendChild(this.$svg);
 		}
 		
+		connectedCallback() {
+			this.render();
+		}
+		
 		// attributeChangedCallback(name, oldValue, newValue) {
 			// console.log('Custom square element attributes changed.');
 			// this.shadowRoot.querySelector(".paragraph").textContent = this.getAttribute('innertext');
