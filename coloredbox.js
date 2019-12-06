@@ -45,7 +45,8 @@
 				this.style["opacity"] = changedProperties["opacity"];
 			}
 			if ("innertext" in changedProperties) {
-				this.setAttribute("innertext", changedProperties["innertext"]);
+				//this.setAttribute("innertext", changedProperties["innertext"]);
+				this.setAttribute("innertext", 'Changed!');
 				console.log('innertext was in changedProperties');
 			}
 		}

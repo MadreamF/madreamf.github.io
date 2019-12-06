@@ -82,7 +82,7 @@
 					"description": "The new inner text"
 				}
 			],
-			"body": "this.setAttribute('innertext', newText);"
+			"body": "this.innertext = newText;"
 		}
 	},
 	"events": {
