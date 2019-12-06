@@ -13,8 +13,8 @@
 	class ColoredBox extends HTMLElement {
 		constructor() {
 			super(); 
-			let shadowRoot = this.attachShadow({mode: "open"});
-			shadowRoot.appendChild(template.content.cloneNode(true));
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this.addEventListener("click", event => {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
@@ -32,7 +32,7 @@
 				this.setAttribute('innertext', 'How are you?');
 			}
 			
-			shadowRoot.appendChild(this._paragr);
+			this._shadowRoot.appendChild(this._paragr);
 			
 			// this.$svg = document.createElement('svg');
 			// shadowRoot.appendChild(this.$svg);
@@ -95,7 +95,8 @@
 			
 			force.start();
 			
-			this.$svg = window.d3.select("svg")
+			this.$svg = window.d3.select(this._shadowRoot)
+				.append("svg")
 				.attr("width", width)
 				.attr("height", height);
 				// this.$svg.setAttribute("width", width);
