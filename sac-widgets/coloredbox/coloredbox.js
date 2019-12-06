@@ -115,6 +115,7 @@
 				.attr("r", function(d) { return d.radius; })
 				.style("fill", function(d, i) { return color(i % 3); });
 			
+			var svg = this.$svg;
 			force.on("tick", function(e) {
 			var q = d3.geom.quadtree(nodes),
 				i = 0,
@@ -122,13 +123,13 @@
 			
 			while (++i < n) q.visit(this.collide(nodes[i]));
 			
-			this.$svg.selectAll("circle")
+			svg.selectAll("circle")
 				.attr("cx", function(d) { return d.x; })
 				.attr("cy", function(d) { return d.y; });
 			});
 			
 			this.$svg.on("mousemove", function() {
-				console.log(d3);
+				//console.log(d3);
 				var p1 = window.d3.mouse(this);
 				root.px = p1[0];
 				root.py = p1[1];
