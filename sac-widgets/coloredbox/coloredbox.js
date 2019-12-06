@@ -1,7 +1,7 @@
 (function() { 
 	let d3Script = document.createElement('script');
 	// d3Script.src = 'https://d3js.org/d3.v5.min.js';
-	d3Script.src = 'http://d3js.org/d3.v3.min.js';
+	d3Script.src = 'https://d3js.org/d3.v3.min.js';
 	d3Script.async = false;
 	document.head.appendChild(d3Script);
 
@@ -34,8 +34,8 @@
 			
 			shadowRoot.appendChild(this._paragr);
 			
-			this.$svg = document.createElement('svg');
-			shadowRoot.appendChild(this.$svg);
+			// this.$svg = document.createElement('svg');
+			// shadowRoot.appendChild(this.$svg);
 		}
 		
 		// attributeChangedCallback(name, oldValue, newValue) {
@@ -90,7 +90,7 @@
 			
 			force.start();
 			
-			this.$svg = d3.select("svg")
+			this.$svg = window.d3.select("svg")
 				.attr("width", width)
 				.attr("height", height);
 				// this.$svg.setAttribute("width", width);
