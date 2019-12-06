@@ -121,7 +121,7 @@
 				i = 0,
 				n = nodes.length;
 			
-			while (++i < n) q.visit(this.collide(nodes[i]));
+			while (++i < n) q.visit(collide(nodes[i]));
 			
 			svg.selectAll("circle")
 				.attr("cx", function(d) { return d.x; })
@@ -137,7 +137,8 @@
 			});
 		}
 		
-		collide(node) {
+	}
+	function collide(node) {
 			var r = node.radius + 16,
 				nx1 = node.x - r,
 				nx2 = node.x + r,
@@ -160,9 +161,6 @@
 				return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
 			};
 		}
-		
-	}
-
 	d3Script.onload = () => customElements.define("com-sap-sample-coloredbox", ColoredBox);
 })();
 //jQuery('body').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>');
