@@ -60,12 +60,12 @@
 			}
 		}
 		
-		get innertext() {
-			return this._innertext;
-		}
-		set innertext(value) {
-			this._innertext = value;
-		}
+		// get innertext() {
+			// return this._innertext;
+		// }
+		// set innertext(value) {
+			// this._innertext = value;
+		// }
 		
 	}
 
