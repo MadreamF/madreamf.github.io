@@ -95,12 +95,19 @@
 			
 			force.start();
 			
-			this.$svg = window.d3.select(this._shadowRoot)
+			if( !this.$svg) {
+				this.$svg = window.d3.select(this._shadowRoot)
 				.append("svg")
 				.attr("width", width)
 				.attr("height", height);
-				// this.$svg.setAttribute("width", width);
-				// this.$svg.setAttribute("height", height);
+			} else {
+				window.d3.select(this._shadowRoot).selectAll("*").remove();
+				this.$svg = window.d3.select(this._shadowRoot)
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height);
+			}
+
 			
 			this.$svg.selectAll("circle")
 				.data(nodes.slice(1))
