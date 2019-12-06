@@ -56,15 +56,12 @@
 		}
 		
 		get innertext() {
-			return this.innertext;
+			return this._innertext;
 		}
 		set innertext(value) {
 			this._innertext = value;
 		}
 		
-		redraw() {
-			
-		}
 	}
 
 	customElements.define("com-sap-sample-coloredbox", ColoredBox);
