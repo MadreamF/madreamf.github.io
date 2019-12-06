@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-coloredbox",
-			"url": "https://madreamf.github.io/sac-widgets/coloredbox/coloredbox_bps.js",
+			"url": "https://madreamf.github.io/sac-widgets/coloredbox/coloredbox.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
