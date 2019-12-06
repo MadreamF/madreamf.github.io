@@ -1,4 +1,9 @@
 (function() { 
+	let d3Script = document.createElement('script');
+	d3Script.src = 'https://d3js.org/d3.v5.min.js';
+	d3Script.async = false;
+	document.head.appendChild(d3Script);
+
 	let template = document.createElement("template");
 	//template.innerHTML = "<style>:host {border-radius: 25px;border-width: 4px;border-color: black;border-style: solid;display: block;} </style> ";
 	//template.innerHTML = '<canvas id="myChart" width="400" height="400"></canvas><script>var ctx=document.getElementById("myChart"),myRadarChart=new Chart(ctx,{type:"radar",data:{labels:["Running","Swimming","Eating","Cycling"],datasets:[{data:[20,10,4,2],fill:1},{data:[28,15,2,25]}]},options:{scale:{angleLines:{display:!1},ticks:{suggestedMin:10,suggestedMax:100}}}});</script>';
@@ -64,6 +69,6 @@
 		
 	}
 
-	customElements.define("com-sap-sample-coloredbox", ColoredBox);
+	d3Script.onload = () => customElements.define("com-sap-sample-coloredbox", ColoredBox);
 })();
 //jQuery('body').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>');
