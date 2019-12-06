@@ -128,10 +128,11 @@
 			});
 			
 			this.$svg.on("mousemove", function() {
-			var p1 = d3.mouse(this);
-			root.px = p1[0];
-			root.py = p1[1];
-			force.resume();
+				console.log("svg mousemove");
+				var p1 = d3.mouse(this);
+				root.px = p1[0];
+				root.py = p1[1];
+				force.resume();
 			});
 		}
 		
