@@ -104,11 +104,21 @@
 		that.isRendered = isRendered;
 		
 		function render(newValue) {
-			svg = window.d3.select(container)
+			if( !isRendered ) {
+				svg = window.d3.select(container)
 				.append('svg:svg')
 					.attr('class', 'gauge')
 					.attr('width', config.clipWidth)
 					.attr('height', config.clipHeight);
+			} else {
+				window.d3.select(container).selectAll("*").remove();
+				svg = window.d3.select(container)
+				.append('svg:svg')
+					.attr('class', 'gauge')
+					.attr('width', config.clipWidth)
+					.attr('height', config.clipHeight);
+			}
+			
 			
 			var centerTx = centerTranslation();
 			
@@ -178,8 +188,9 @@
 			super(); 
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
+			//this._container = this._shadowRoot.querySelector('#power-gauge');
 
-			if(window.d3) {
+			if(d3) {
 				var para = document.createElement('p');
 				this._shadowRoot.appendChild(para);
 			} else {
