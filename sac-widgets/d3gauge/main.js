@@ -171,6 +171,12 @@
 			super(); 
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
+
+			if(d3) {
+				this._shadowRoot.appendChild('<p>Parag</p>');
+			} else {
+				this._shadowRoot.appendChild('<a>Link</a>');
+			}
 			
 			//this.$container = this._shadowRoot.querySelector('#power-gauge');			
 			//this.$svg = shadowRoot.querySelector('svg');
