@@ -6,7 +6,11 @@
 	d3Script.async = false;
 	document.head.appendChild(d3Script);
 
-	
+	let testCSS = document.createElement('link');
+	testCSS.href = 'https://madreamf.github.io/test.css';
+	testCSS.type = 'text/css';
+	testCSS.rel = 'stylesheet';
+	document.head.appendChild(testCSS);
 
 	let template = document.createElement("template");
 	template.innerHTML = `
