@@ -7,7 +7,7 @@
 				<table>
 					<tr>
 						<td>Value</td>
-						<td><input id="bps_value" type="text" size="10" maxlength="10"></td>
+						<td><input id="sps_value" type="text" size="10" maxlength="10"></td>
 					</tr>
 				</table>
 				<input type="submit" style="display:none;">
@@ -21,7 +21,7 @@
 		</style>
 	`;
 
-	class D3GaugeBps extends HTMLElement {
+	class D3GaugeSps extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
@@ -41,13 +41,13 @@
 		}
 
 		set value(newValue) {
-			this._shadowRoot.getElementById("bps_value").value = newValue;
+			this._shadowRoot.getElementById("sps_value").value = newValue;
 		}
 
 		get value() {
-			return this._shadowRoot.getElementById("bps_value").value;
+			return this._shadowRoot.getElementById("sps_value").value;
 		}
 	}
 
-	customElements.define("com-demo-d3gauge-bps", D3GaugeBps);
+	customElements.define("com-demo-d3gauge-sps", D3GaugeSps);
 })();

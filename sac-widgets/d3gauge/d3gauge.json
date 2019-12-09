@@ -11,21 +11,21 @@
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-demo-gauge",
+			"tag": "com-demo-d3gauge",
 			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
-			"tag": "com-demo-gauge-sps",
+			"tag": "com-demo-d3gauge-sps",
 			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main_sps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
-			"tag": "com-demo-box-bps",
+			"tag": "com-demo-d3box-bps",
 			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main_bps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
@@ -62,11 +62,11 @@
 		},
 		"minValue": {
 			"type": "integer",
-			"default": 100
+			"default": 0
 		},
 		"maxValue": {
 			"type": "integer",
-			"default": 100
+			"default": 10
 		},
 		"transitionMs": {
 			"type": "integer",
@@ -104,7 +104,7 @@
 				}
 			],
 			"body": "this.minValue = newValue;"
-		}
+		},
 		"getMinValue": {
 			"returnType": "number",
 			"description": "Returns the min value.",
