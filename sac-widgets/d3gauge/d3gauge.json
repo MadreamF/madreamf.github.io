@@ -25,7 +25,7 @@
 		},
 		{
 			"kind": "builder",
-			"tag": "com-demo-d3box-bps",
+			"tag": "com-demo-d3gauge-bps",
 			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main_bps.js",
 			"integrity": "",
 			"ignoreIntegrity": true

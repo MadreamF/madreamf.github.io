@@ -32,7 +32,7 @@
 			
 			transitionMs				: 750,
 			
-			majorTicks					: 1,
+			majorTicks					: 5,
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
