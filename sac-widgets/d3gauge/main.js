@@ -6,6 +6,8 @@
 	d3Script.async = false;
 	document.head.appendChild(d3Script);
 
+	
+
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<div id="power-gauge"></div>

@@ -5,3 +5,6 @@
     white-space: nowrap;
     background: red !important;
 }
+#power-gauge {
+	display: none;
+}
