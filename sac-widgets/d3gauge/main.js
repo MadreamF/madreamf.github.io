@@ -97,7 +97,7 @@
 		that.isRendered = isRendered;
 		
 		function render(newValue) {
-			svg = d3.select(container)
+			svg = window.d3.select(container)
 				.append('svg:svg')
 					.attr('class', 'gauge')
 					.attr('width', config.clipWidth)
@@ -172,7 +172,7 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			
-			this.$container = this._shadowRoot.querySelector('#power-gauge');			
+			//this.$container = this._shadowRoot.querySelector('#power-gauge');			
 			//this.$svg = shadowRoot.querySelector('svg');
 			
 			this.addEventListener("click", event => {
@@ -184,7 +184,7 @@
 		}
 		
 		render(val) {
-				var powerGauge = gauge(this.$container, {
+				var powerGauge = gauge(this._shadowRoot, {
 				size: 300,
 				clipWidth: 300,
 				clipHeight: 300,
