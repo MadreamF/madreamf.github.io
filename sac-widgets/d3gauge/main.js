@@ -209,15 +209,15 @@
 			this._props = {};
 		}
 		
-		render(val) {
+		render(val, min, max, transitionMs) {
 			var powerGauge = gauge(this._shadowRoot, {
 				size: 300,
 				clipWidth: 300,
 				clipHeight: 300,
 				ringWidth: 60,
-				minValue: -10,
-				maxValue: 10,
-				transitionMs: 4000,
+				minValue: min,
+				maxValue: max,
+				transitionMs: transitionMs,
 				arcColorFn: d3.interpolateHsl(d3.rgb(0, 128, 0), d3.rgb(0, 0, 0))
 			});
 			powerGauge.render();
@@ -233,8 +233,17 @@
 			if ("value" in changedProperties) {
 				this.$value = changedProperties["value"];
 			}
+			if ("minValue" in changedProperties) {
+				this.$minValue = changedProperties["minValue"];
+			}
+			if ("maxValue" in changedProperties) {
+				this.$maxValue = changedProperties["maxValue"];
+			}
+			if ("transitionMs" in changedProperties) {
+				this.$transitionMs = changedProperties["transitionMs"];
+			}
 			
-			this.render(this.$value);
+			this.render(this.$value, this.$minValue, this.$maxValue, this.$transitionMs);
 		}
 	}
 	
