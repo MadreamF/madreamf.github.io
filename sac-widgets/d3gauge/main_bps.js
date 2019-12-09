@@ -21,6 +21,18 @@
 						<td>Transitions Miliseconds</td>
 						<td><input id="bps_transition" type="text" size="10" maxlength="10"></td>
 					</tr>
+					<tr>
+						<td>Color From</td>
+						<td><input id="bps_colorfrom" type="text" size="10" maxlength="10"></td>
+					</tr>
+					<tr>
+						<td>Color To</td>
+						<td><input id="bps_colorto" type="text" size="10" maxlength="10"></td>
+					</tr>
+					<tr>
+						<td>Bins</td>
+						<td><input id="bps_majorticks" type="text" size="10" maxlength="10"></td>
+					</tr>
 				</table>
 				<input type="submit" style="display:none;">
 			</fieldset>
@@ -49,7 +61,10 @@
 							value: this.value,
 							minValue: this.minValue,
 							maxValue: this.maxValue,
-							transitionMs: this.transition
+							transitionMs: this.transition,
+							colorFrom: this.colorFrom,
+							colorTo: this.colorTo,
+							majorTicks: this.majorTicks
 						}
 					}
 			}));
@@ -85,6 +100,30 @@
 
 		get transition() {
 			return this._shadowRoot.getElementById("bps_transition").value;
+		}
+		
+		set colorFrom(newValue) {
+			this._shadowRoot.getElementById("bps_colorFrom").value = newValue;
+		}
+
+		get colorFrom() {
+			return this._shadowRoot.getElementById("bps_colorFrom").value;
+		}
+
+		set colorTo(newValue) {
+			this._shadowRoot.getElementById("bps_colorTo").value = newValue;
+		}
+
+		get colorTo() {
+			return this._shadowRoot.getElementById("bps_colorTo").value;
+		}
+
+		set majorTicks(newValue) {
+			this._shadowRoot.getElementById("bps_majorticks").value = newValue;
+		}
+
+		get majorTicks() {
+			return this._shadowRoot.getElementById("bps_majorticks").value;
 		}
 	}
 

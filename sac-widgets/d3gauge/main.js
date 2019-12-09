@@ -215,7 +215,7 @@
 			this._props = {};
 		}
 		
-		render(val, min, max, transitionMs) {
+		render(val, min, max, transitionMs, colorFrom, colorTo, majorTicks) {
 			var powerGauge = gauge(this._shadowRoot, {
 				size: 300,
 				clipWidth: 300,
@@ -224,7 +224,8 @@
 				minValue: min,
 				maxValue: max,
 				transitionMs: transitionMs,
-				arcColorFn: d3.interpolateHsl(d3.rgb(0, 128, 0), d3.rgb(0, 0, 0))
+				majorTicks: majorTicks,
+				arcColorFn: d3.interpolateHsl(d3.rgb(colorFrom), d3.rgb(colorTo))
 			});
 			powerGauge.render();
 			powerGauge.update(val);
@@ -248,8 +249,17 @@
 			if ("transitionMs" in changedProperties) {
 				this.$transitionMs = changedProperties["transitionMs"];
 			}
+			if ("colorFrom" in changedProperties) {
+				this.$colorFrom = changedProperties["colorFrom"];
+			}
+			if ("colorTo" in changedProperties) {
+				this.$colorTo = changedProperties["colorTo"];
+			}
+			if ("majorTicks" in changedProperties) {
+				this.$majorTicks = changedProperties["majorTicks"];
+			}
 			
-			this.render(this.$value, this.$minValue, this.$maxValue, this.$transitionMs);
+			this.render(this.$value, this.$minValue, this.$maxValue, this.$transitionMs, this.$colorFrom, this.$colorTo, this.$majorTicks);
 		}
 	}
 	
