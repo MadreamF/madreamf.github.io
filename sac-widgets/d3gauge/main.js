@@ -1,4 +1,11 @@
 (function() { 
+
+	let d3Script = document.createElement('script');
+	// d3Script.src = 'https://d3js.org/d3.v5.min.js';
+	d3Script.src = 'https://d3js.org/d3.v3.min.js';
+	d3Script.async = false;
+	document.head.appendChild(d3Script);
+
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<div id="power-gauge"></div>
@@ -190,7 +197,7 @@
 		}
 		
 		render(val) {
-				var powerGauge = gauge(this._shadowRoot, {
+			var powerGauge = gauge(this._shadowRoot, {
 				size: 300,
 				clipWidth: 300,
 				clipHeight: 300,
@@ -218,5 +225,5 @@
 		}
 	}
 	
-	customElements.define("com-demo-d3gauge", D3Gauge);
+	d3Script.onload = () => customElements.define("com-demo-d3gauge", D3Gauge);
 })();
