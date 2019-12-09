@@ -1,0 +1,119 @@
+{
+	"id": "com.demo.d3gauge",
+	"version": "1.0.0",
+	"name": "D3 Gauge",
+	"description": "D3 gauge demo",
+	"newInstancePrefix": "D3Gauge",
+	"icon": "https://example.demo/box/icon.png",
+	"vendor": "Demo",
+	"eula": "EULA",
+	"license": "1.0",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-demo-gauge",
+			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "styling",
+			"tag": "com-demo-gauge-sps",
+			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main_sps.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "builder",
+			"tag": "com-demo-box-bps",
+			"url": "https://madreamf.github.io/sac-widgets/d3gauge/main_bps.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"value": {
+			"type": "number",
+			"description": "Gauge value",
+			"default": "0"
+		},
+		"info": {
+			"type": "string",
+			"description": "Gauge info",
+			"default": ""
+		},
+		"colorFrom": {
+			"type": "string",
+			"description": "Color from",
+			"default": "#fff"
+		},
+		"colorTo": {
+			"type": "string",
+			"description": "Color to",
+			"default": "#008000"
+		},
+		"width": {
+			"type": "integer",
+			"default": 100
+		},
+		"height": {
+			"type": "integer",
+			"default": 100
+		},
+		"minValue": {
+			"type": "integer",
+			"default": 100
+		},
+		"maxValue": {
+			"type": "integer",
+			"default": 100
+		},
+		"transitionMs": {
+			"type": "integer",
+			"default": 4000
+		},
+		"majorTicks": {
+			"type": "integer",
+			"default": 100
+		}
+	},
+	"methods": {
+		"setValue": {
+			"description": "Sets the Gauge value.",
+			"parameters": [
+				{
+					"name": "newValue",
+					"type": "number",
+					"description": "Gauge value"
+				}
+			],
+			"body": "this.value = newValue;"
+		},
+		"getValue": {
+			"returnType": "number",
+			"description": "Returns the Gauge value.",
+			"body": "return this.value;"
+		},
+		"setMinValue": {
+			"description": "Sets the min value.",
+			"parameters": [
+				{
+					"name": "newValue",
+					"type": "number",
+					"description": "Min value"
+				}
+			],
+			"body": "this.minValue = newValue;"
+		}
+		"getMinValue": {
+			"returnType": "number",
+			"description": "Returns the min value.",
+			"body": "return this.minValue;"
+		}
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks the Box."
+		}
+	}
+}
