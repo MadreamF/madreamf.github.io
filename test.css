@@ -1,0 +1,7 @@
+.sapFpaAppBuildingUiRadioBtnGHeader, .sapFpaAppBuildingUiRadioBtnWrapper {
+    font-family: "72",Arial,Helvetica,sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: red !important;
+}

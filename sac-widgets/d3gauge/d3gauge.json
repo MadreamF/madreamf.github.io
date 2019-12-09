@@ -61,11 +61,11 @@
 			"default": 100
 		},
 		"minValue": {
-			"type": "integer",
+			"type": "number",
 			"default": 0
 		},
 		"maxValue": {
-			"type": "integer",
+			"type": "number",
 			"default": 10
 		},
 		"transitionMs": {
@@ -109,6 +109,22 @@
 			"returnType": "number",
 			"description": "Returns the min value.",
 			"body": "return this.minValue;"
+		},
+		"setMaxValue": {
+			"description": "Sets the max value.",
+			"parameters": [
+				{
+					"name": "newValue",
+					"type": "number",
+					"description": "Min value"
+				}
+			],
+			"body": "this.maxValue = newValue;"
+		},
+		"getMaxValue": {
+			"returnType": "number",
+			"description": "Returns the max value.",
+			"body": "return this.maxValue;"
 		}
 	},
 	"events": {
