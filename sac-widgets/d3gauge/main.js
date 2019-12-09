@@ -180,9 +180,11 @@
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 
 			if(window.d3) {
-				this._shadowRoot.appendChild('<p>Parag</p>');
+				var para = document.createElement('p');
+				this._shadowRoot.appendChild(para);
 			} else {
-				this._shadowRoot.appendChild('<a>Link</a>');
+				var lk = document.createElement('a');
+				this._shadowRoot.appendChild(lk);
 			}
 			
 			//this.$container = this._shadowRoot.querySelector('#power-gauge');			
