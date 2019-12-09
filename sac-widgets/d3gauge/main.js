@@ -169,10 +169,10 @@
 	class D3Gauge extends HTMLElement {
 		constructor() {
 			super(); 
-			let shadowRoot = this.attachShadow({mode: "open"});
-			shadowRoot.appendChild(template.content.cloneNode(true));
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			
-			//this.$style = shadowRoot.querySelector('style');			
+			this.$container = this._shadowRoot.querySelector('#power-gauge');			
 			//this.$svg = shadowRoot.querySelector('svg');
 			
 			this.addEventListener("click", event => {
@@ -184,7 +184,7 @@
 		}
 		
 		render(val) {
-				var powerGauge = gauge('#power-gauge', {
+				var powerGauge = gauge(this.$container, {
 				size: 300,
 				clipWidth: 300,
 				clipHeight: 300,
@@ -199,8 +199,6 @@
 		}
 		  
 		
-		  
-
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
 		}
