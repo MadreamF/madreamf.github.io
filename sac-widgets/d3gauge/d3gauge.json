@@ -37,15 +37,10 @@
 			"description": "Gauge value",
 			"default": "0"
 		},
-		"info": {
-			"type": "string",
-			"description": "Gauge info",
-			"default": ""
-		},
 		"colorFrom": {
 			"type": "string",
 			"description": "Color from",
-			"default": "#fff"
+			"default": "#ffffff"
 		},
 		"colorTo": {
 			"type": "string",
