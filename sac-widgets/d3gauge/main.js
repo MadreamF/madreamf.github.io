@@ -109,7 +109,7 @@
 		}
 		that.isRendered = isRendered;
 		
-		function render(newValue) {
+		function render(newValue, currentValue) {
 			if( !isRendered ) {
 				svg = window.d3.select(container)
 				.append('svg:svg')
@@ -163,19 +163,26 @@
 					.attr('class', 'pointer')
 					.attr('transform', centerTx);
 					
+            var currentAngle = config.minAngle;
+			if( typeof currentValue !== 'undefined') {
+				var currentRatio = scale(currentValue);
+				currentAngle = config.minAngle + (currentRatio * range);
+			}
 			pointer = pg.append('path')
 				.attr('d', pointerLine/*function(d) { return pointerLine(d) +'Z';}*/ )
-				.attr('transform', 'rotate(' +config.minAngle +')');
+				.attr('transform', 'rotate(' + currentAngle +')');
 				
 			update(newValue === undefined ? 0 : newValue);
 		}
 		that.render = render;
 		
-		function update(newValue, newConfiguration) {
+		function update(newValue, currentValue, newConfiguration) {
 			if ( newConfiguration  !== undefined) {
 				configure(newConfiguration);
 			}
 			var ratio = scale(newValue);
+			//var currentRatio = scale(currentValue);
+			//current_angle = ((typeof current_angle === 'undefined') ? config.minAngle: current_angle)
 			var newAngle = config.minAngle + (ratio * range);
 			pointer.transition()
 				.duration(config.transitionMs)
@@ -215,7 +222,7 @@
 			this._props = {};
 		}
 		
-		render(val, min, max, transitionMs, colorFrom, colorTo, majorTicks) {
+		render(newVal, currentVal, min, max, transitionMs, colorFrom, colorTo, majorTicks) {
 			var powerGauge = gauge(this._shadowRoot, {
 				size: 300,
 				clipWidth: 300,
@@ -227,8 +234,8 @@
 				majorTicks: majorTicks,
 				arcColorFn: d3.interpolateHsl(d3.rgb(colorFrom), d3.rgb(colorTo))
 			});
-			powerGauge.render();
-			powerGauge.update(val);
+			powerGauge.render(newVal, currentVal);
+			powerGauge.update(newVal, currentVal);
 		}
 		  
 		
@@ -238,6 +245,7 @@
 
 		onCustomWidgetAfterUpdate(changedProperties) {
 			if ("value" in changedProperties) {
+				this.$currentValue = this.$value;
 				this.$value = changedProperties["value"];
 			}
 			if ("minValue" in changedProperties) {
@@ -259,7 +267,7 @@
 				this.$majorTicks = changedProperties["majorTicks"];
 			}
 			
-			this.render(this.$value, this.$minValue, this.$maxValue, this.$transitionMs, this.$colorFrom, this.$colorTo, this.$majorTicks);
+			this.render(this.$value, this.$currentValue, this.$minValue, this.$maxValue, this.$transitionMs, this.$colorFrom, this.$colorTo, this.$majorTicks);
 		}
 	}
 	
