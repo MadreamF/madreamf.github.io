@@ -60,11 +60,11 @@
 						properties: {
 							value: this.value,
 							minValue: this.minValue,
-							maxValue: this.maxValue,
-							transitionMs: this.transition,
-							colorFrom: this.colorFrom,
-							colorTo: this.colorTo,
-							majorTicks: this.majorTicks
+							// maxValue: this.maxValue,
+							// transitionMs: this.transition,
+							// colorFrom: this.colorFrom,
+							// colorTo: this.colorTo,
+							// majorTicks: this.majorTicks
 						}
 					}
 			}));
