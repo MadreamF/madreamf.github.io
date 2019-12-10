@@ -60,11 +60,11 @@
 						properties: {
 							value: this.value,
 							minValue: this.minValue,
-							// maxValue: this.maxValue,
-							// transitionMs: this.transition,
-							// colorFrom: this.colorFrom,
-							// colorTo: this.colorTo,
-							// majorTicks: this.majorTicks
+							maxValue: this.maxValue,
+							transitionMs: this.transition,
+							colorFrom: this.colorFrom,
+							colorTo: this.colorTo,
+							majorTicks: this.majorTicks
 						}
 					}
 			}));
@@ -103,19 +103,19 @@
 		}
 		
 		set colorFrom(newValue) {
-			this._shadowRoot.getElementById("bps_colorFrom").value = newValue;
+			this._shadowRoot.getElementById("bps_colorfrom").value = newValue;
 		}
 
 		get colorFrom() {
-			return this._shadowRoot.getElementById("bps_colorFrom").value;
+			return this._shadowRoot.getElementById("bps_colorfrom").value;
 		}
 
 		set colorTo(newValue) {
-			this._shadowRoot.getElementById("bps_colorTo").value = newValue;
+			this._shadowRoot.getElementById("bps_colorto").value = newValue;
 		}
 
 		get colorTo() {
-			return this._shadowRoot.getElementById("bps_colorTo").value;
+			return this._shadowRoot.getElementById("bps_colorto").value;
 		}
 
 		set majorTicks(newValue) {
